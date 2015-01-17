@@ -1,0 +1,24 @@
+{
+  "name": "react-components",
+  "version": "0.0.0",
+  "description": "A collection of React components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "jsx src/ lib/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marksteve/react-components.git"
+  },
+  "author": "Mark Steve Samson",
+  "license": "MIT",
+  "homepage": "https://github.com/marksteve/react-components",
+  "dependencies": {
+    "react": "^0.12.2",
+    "velocity-animate": "^1.2.1"
+  },
+  "devDependencies": {
+    "react-tools": "^0.12.2"
+  }
+}
