@@ -15,9 +15,9 @@
   "author": "Mark Steve Samson",
   "license": "MIT",
   "homepage": "https://github.com/marksteve/react-components",
-  "dependencies": {
-    "react": "^0.12.2",
-    "velocity-animate": "^1.2.1"
+  "peerDependencies": {
+    "react": "0.12.x",
+    "velocity-animate": "1.2.x"
   },
   "devDependencies": {
     "browserify": "^9.0.3",
