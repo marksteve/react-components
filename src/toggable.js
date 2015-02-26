@@ -6,70 +6,64 @@
  *
  */
 
-var React = require('react/addons');
-var Velocity = require('velocity-animate/velocity');
-require('velocity-animate/velocity.ui');
+var React = require('react')
+var Velocity = require('velocity-animate/velocity')
+require('velocity-animate/velocity.ui')
 
-module.exports = React.createClass({
-  displayName: 'Toggable',
-  getDefaultProps: function() {
+var Toggable = React.createClass({
+  getDefaultProps() {
     return {
       animationIn: 'transition.fadeIn',
       animationOut: 'transition.fadeOut',
       duration: 250
-    };
+    }
   },
-  getInitialState: function() {
+  getInitialState() {
     return {
       toggled: false,
       render: false
-    };
+    }
   },
-  componentWillReceiveProps: function(nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.toggled !== this.props.toggled) {
       if (nextProps.toggled) {
         this.setState({
           toggled: true,
           render: true
-        });
+        })
       } else {
         this.setState({
           toggled: false
-        });
+        })
       }
     }
   },
-  componentDidUpdate: function(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (prevState.toggled !== this.state.toggled) {
       if (this.state.toggled) {
         Velocity(
           this.getDOMNode(),
           this.props.animationIn,
           this.props
-        );
+        )
       } else {
         Velocity(
           this.getDOMNode(),
           this.props.animationOut,
-          React.addons.update(
-            this.props,
-            {
-              $merge: {
-                complete: (function() {
-                  this.setState({
-                    render: false
-                  });
-                }).bind(this)
-              }
-            }
-          )
-        );
+          this.props
+        ).then(() => {
+          this.setState({
+            render: false
+          })
+        })
       }
     }
   },
-  render: function() {
+  render() {
     return (
       this.state.render ? <div {...this.props} /> : null
-    );
+    )
   }
-});
+})
+
+module.exports = Toggable
