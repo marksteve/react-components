@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "jsx --harmony src/ lib/"
+    "build": "jsx --harmony src/ lib/",
+    "build-demo": "browserify -t [reactify --es6] demo/demo.jsx > demo/demo.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,8 @@
     "velocity-animate": "^1.2.1"
   },
   "devDependencies": {
-    "react-tools": "^0.12.2"
+    "browserify": "^9.0.3",
+    "react-tools": "^0.12.2",
+    "reactify": "^1.0.0"
   }
 }
