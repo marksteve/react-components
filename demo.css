@@ -10,11 +10,22 @@ h1 {
   margin-top: 0;
 }
 
-input[type=text] {
+button {
+  background-color: #eee;
+}
+
+input[type=text],
+button {
   border: 1px solid #ccc;
   border-radius: 0.2em;
   padding: 0 0.5em;
   height: 2em;
+}
+
+input[type=text]:focus,
+button:focus {
+  border-color: #999;
+  outline: none;
 }
 
 section {
@@ -24,6 +35,13 @@ section {
   background: white;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
   border-radius: 0.2em;
+}
+
+.rc-toggable {
+  width: 10em;
+  height: 10em;
+  margin: 1em 0;
+  background: #999;
 }
 
 .rc-suffixed-input .suffix {
