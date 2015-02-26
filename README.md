@@ -16,6 +16,8 @@ var rc = require('react-components');
 
 ## Toggable
 
+[Demo](https://marksteve.com/react-components#toggable)
+
 Toggle through the `toggled` property
 
 ```html
@@ -50,7 +52,14 @@ You can also specify options for the animation as properties.
 }
 ```
 
-[Demo](#)
+## Suffixed Input
+
+[Demo](https://marksteve.com/react-components#suffixed-input)
+
+```html
+<rc.SuffixedInput suffix="suffix" />
+```
+
 
 ## License
 
