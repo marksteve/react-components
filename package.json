@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "jsx --harmony src/ lib/",
-    "build-demo": "browserify -t [reactify --es6] demo/demo.jsx | uglifyjs -m -c > demo/demo.js"
+    "build-demo": "browserify -t [babelify] demo/demo.jsx | uglifyjs -m -c > demo/demo.js"
   },
   "repository": {
     "type": "git",
@@ -16,13 +16,13 @@
   "license": "MIT",
   "homepage": "https://github.com/marksteve/react-components",
   "peerDependencies": {
-    "react": "0.12.x",
+    "react": "^0.13.2",
     "velocity-animate": "1.2.x"
   },
   "devDependencies": {
-    "browserify": "^9.0.3",
-    "react-tools": "^0.12.2",
-    "reactify": "^1.0.0",
+    "babelify": "^6.0.2",
+    "browserify": "^9.0.8",
+    "react-tools": "^0.13.2",
     "uglify-js": "^2.4.16"
   }
 }

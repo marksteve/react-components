@@ -42,13 +42,13 @@ var Toggable = React.createClass({
     if (prevState.toggled !== this.state.toggled) {
       if (this.state.toggled) {
         Velocity(
-          this.getDOMNode(),
+          React.findDOMNode(this),
           this.props.animationIn,
           this.props
         )
       } else {
         Velocity(
-          this.getDOMNode(),
+          React.findDOMNode(this),
           this.props.animationOut,
           this.props
         ).then(() => {

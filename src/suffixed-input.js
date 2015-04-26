@@ -17,7 +17,7 @@ var SuffixedInput = React.createClass({
     if (prevState.value !== this.state.value) {
       this.setState({
         suffixLeft: (
-          this.refs.shadow.getDOMNode()
+          React.findDOMNode(this.refs.shadow)
             .getBoundingClientRect().width
         )
       })
