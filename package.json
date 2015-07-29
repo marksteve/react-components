@@ -2,11 +2,14 @@
   "name": "react-components",
   "version": "0.0.2",
   "description": "A collection of React components",
-  "main": "index.js",
+  "main": "lib/react-components.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "jsx --harmony src/ lib/",
-    "build-demo": "browserify -t [babelify] demo/demo.jsx | uglifyjs -m -c > demo/demo.js"
+    "build": "browserify --no-bundle-external -s react-components src/index.js > lib/react-components.js",
+    "watch": "watchify --no-bundle-external -s react-components src/index.js -o lib/react-components.js -v",
+    "build:demo": "browserify demo/demo.jsx | uglifyjs -cm > demo/demo.js",
+    "watch:demo": "watchify demo/demo.jsx -o demo/demo.js -v",
+    "update:demo": "git subtree push --prefix=demo origin gh-pages"
   },
   "repository": {
     "type": "git",
@@ -15,14 +18,21 @@
   "author": "Mark Steve Samson",
   "license": "MIT",
   "homepage": "https://github.com/marksteve/react-components",
-  "peerDependencies": {
-    "react": "^0.13.2",
-    "velocity-animate": "1.2.x"
-  },
   "devDependencies": {
-    "babelify": "^6.0.2",
-    "browserify": "^9.0.8",
-    "react-tools": "^0.13.2",
-    "uglify-js": "^2.4.16"
+    "babelify": "^6.1.3",
+    "browserify": "^10.2.6",
+    "uglify-js": "^2.4.23"
+  },
+  "peerDependencies": {
+    "react": "0.13.x"
+  },
+  "dependencies": {
+    "classnames": "^2.1.3",
+    "object-assign": "^3.0.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   }
 }

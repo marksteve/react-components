@@ -2,14 +2,35 @@
 <html>
   <head>
     <title>marksteve/react-components</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css">
-    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Source+Sans+Pro:400,700,400i,700i">
-    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font: 20px/1.5 sans-serif
+      }
+      a {
+        color: dodgerblue;
+      }
+      input {
+        padding: 0.5em 1em;
+      }
+      .container {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 1em;
+      }
+    </style>
   </head>
   <body>
-    <section>
-      <h1>marksteve/react-components</h1>
-
+    <div class="container">
+      <h1>
+        <a href="https://github.com/marksteve/react-components">
+          marksteve/react-components
+        </a>
+      </h1>
       <p>
         <iframe
         src="https://ghbtns.com/github-btn.html?user=marksteve&repo=react-components&type=star&count=true"
@@ -18,10 +39,8 @@
         src="https://ghbtns.com/github-btn.html?user=marksteve&repo=react-components&type=fork&count=true"
         frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
       </p>
-
       <div id="demo"></div>
-    </section>
-
+    </div>
     <script src="demo.js"></script>
   </body>
 </html>
