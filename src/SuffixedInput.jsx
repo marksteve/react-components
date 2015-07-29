@@ -26,7 +26,6 @@ export default React.createClass({
           border: '1px solid #ccc',
           minWidth: '5em',
           display: 'inline-block',
-          padding: '0 0.2em',
         }, this.props.style)}
         className={cn(this.props.className)}
         onClick={this._onFocus}
