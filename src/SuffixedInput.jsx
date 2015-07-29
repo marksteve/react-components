@@ -44,6 +44,7 @@ export default React.createClass({
           style={objectAssign({
             color: '#ccc',
           }, this.props.suffixStyle)}
+          className={cn(this.props.suffixClassName)}
         >
           {this.props.suffix}
         </span>
