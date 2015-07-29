@@ -9,7 +9,15 @@ export default React.createClass({
     }
   },
   componentDidMount() {
-    React.findDOMNode(this.refs.input).innerText = this.state.value
+    this._setInputValue(this.state.value)
+  },
+  componentWillReceiveProps(nextProps) {
+    this.setState({value: nextProps.value})
+  },
+  componentWillUpdate(nextProps, nextState) {
+    if (nextState.value !== this.state.value) {
+      this._setInputValue(nextState.value)
+    }
   },
   render() {
     return (
@@ -47,12 +55,19 @@ export default React.createClass({
       </div>
     )
   },
+  _setInputValue(value) {
+    React.findDOMNode(this.refs.input).innerText = value
+  },
   _onFocus(e) {
     React.findDOMNode(this.refs.input).focus()
   },
   _onChange() {
     this.setState({
       value: React.findDOMNode(this.refs.input).innerText,
+    }, () => {
+      if (this.props.onChange) {
+        this.props.onChange(this.state.value)
+      }
     })
   },
 })
